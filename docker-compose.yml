@@ -1,6 +1,6 @@
     version: '2.1'
     services:
-      sa-ldap:
+      ouioui-ldap:
         image: osixia/openldap:1.1.8
         container_name: ouioui_ldap
         environment:
@@ -43,9 +43,9 @@
         image: osixia/phpldapadmin:latest
         container_name: ouioui_ldap_client
         environment:
-          PHPLDAPADMIN_LDAP_HOSTS: "sa-ldap"
+          PHPLDAPADMIN_LDAP_HOSTS: "ouioui-ldap"
           PHPLDAPADMIN_HTTPS: "false"
         ports:
           - "8085:80"
         links:
-          - sa-ldap
+          - ouioui-ldap
