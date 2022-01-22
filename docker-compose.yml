@@ -2,7 +2,7 @@
     services:
       sa-ldap:
         image: osixia/openldap:1.1.8
-        container_name: sa_ldap
+        container_name: ouioui_ldap
         environment:
           COMPOSE_HTTP_TIMEOUT: 200
           LDAP_LOG_LEVEL: "256"
@@ -38,10 +38,10 @@
         ports:
           - "389:389"
           - "636:636"
-        hostname: "arqsoft.unal.edu.co"
+        hostname: "ouioui.unal.edu.co"
       phpldapadmin:
         image: osixia/phpldapadmin:latest
-        container_name: ldap_client
+        container_name: ouioui_ldap_client
         environment:
           PHPLDAPADMIN_LDAP_HOSTS: "sa-ldap"
           PHPLDAPADMIN_HTTPS: "false"
